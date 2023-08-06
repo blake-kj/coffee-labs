@@ -1,0 +1,1424 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+@font-face {
+    font-family: 'Bobby Jones Soft';
+    src: url('../fonts/Bobby-Jones-Soft.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    }
+
+$primary: #261912;
+$primary-100: #51301E;
+$secondary: #F4ECCF;
+$secondary-900: #ada791;
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+body {
+    background: $primary;
+    color: $secondary;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+.wrapper {
+    padding: 0px 0px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
+h1 {
+    font-family: 'Bobby Jones Soft', sans-serif;
+    font-size: 64px;
+    line-height: 90%;
+}
+
+h2 {
+    font-family: 'Bobby Jones Soft', sans-serif;
+    font-size: 48px;
+}
+
+h3 {
+    font-family: 'Bobby Jones Soft', sans-serif;
+    font-size: 32px;
+}
+
+p {
+    line-height: 95%;
+}
+
+.button {
+    line-height: 1;
+    font-family: 'Bobby Jones Soft', sans-serif;
+    font-size: 20px;
+    color: $secondary;
+    text-decoration: none;
+    display: inline-block;
+    background: $primary;
+    
+    padding: 10px 35px !important;
+    border-radius: 25px !important;
+    &:hover {
+        color: $secondary;
+        background: black;
+    }
+}
+
+.top-header {
+    z-index: 99;
+    transition: ease 0.5s all;
+    @media(max-width:$md){
+        background-color: rgba(38,25,18,0.4)!important; 
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    &.scrolled {
+        background-color: rgba(38,25,18,0.4)!important; 
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        transition: ease 0.5s all;
+        .top-header-container {
+            padding-top: 1.5em !important;
+            @media(max-width:$md){
+                padding-top: 0.5em !important;
+            }
+        }
+        img {
+            transition: ease 0.5s all;
+            width: 100px;
+        }
+    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .navbar-collapse {
+        font-weight: bold;
+    }
+    .logo-holder {
+        display: flex;
+        justify-content: center;
+        @media(max-width:$md){
+            justify-content: start;
+            img {
+                width: 75px;
+            }
+        }
+    }
+    #main-nav {
+        background-color: rgba($color: #000000, $alpha: 0) !important;
+        .container {
+            @media(max-width:$md){
+                justify-content: end;
+            }
+        }
+        a {
+            color: $secondary !important;
+            font-family: 'Bobby Jones Soft';
+            font-size: 28px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+    }
+}
+
+.home-top-hero {
+    height: 1000px;
+    @media(max-width:$lg){
+        height: 800px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/home-hero-brown.png");
+        background-position: left;
+        text-align: center;
+    }
+    @media(max-width:$md){
+        height: 600px;
+    }
+
+    background-image: url("../img/home-hero-brown.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    .hero-sub-heading {
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 95%;
+    }
+}
+
+.our-history {
+    .container {
+        position: relative;
+        overflow: visible;
+    }
+    .extra:before{
+    content: '';
+    display: block; /* override bootstrap */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform:translate(-50%, 0);
+    background-size: 50%;
+    background-position: center;
+    }
+    
+    [class*="col"]{
+        min-height:500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .button {
+            align-self: flex-start;
+        }
+    }
+    
+    .left:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 45vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    right: 0;
+    background-image: url("../img/coffee-plantation-salento.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    }
+    
+    .right:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 60vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    left: 0;
+    background: url("../img/our-history-bg-pattern.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }   
+    .right {
+        padding-top: 75px;
+        padding-left: 75px;
+        padding-bottom: 75px;
+        @media(max-width:$lg){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        color: $primary;
+    } 
+    .right > * {
+        position: relative;
+    }
+}
+
+.our-coffee-blends {
+    .individual-item {
+        display: flex;
+        align-items: stretch;
+        color: $primary;
+        padding: 20px;
+        .item-wrapper {
+            background: $secondary;
+            border-radius: 25px;
+            padding-left: 0px;
+            padding-right: 0px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .item-info-holder {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding: 20px;
+            .button {
+                align-self: flex-start;
+            }
+        }
+        .final-item {
+            background: $primary-100;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $secondary;
+            text-align: center;
+            padding: 100px 20px;
+        }
+    }
+}
+
+.our-vision {
+    .container {
+        position: relative;
+        overflow: visible;
+    }
+    .extra:before{
+    content: '';
+    display: block; /* override bootstrap */
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 100vw;
+    height: 100%;
+    transform:translate(-50%, 0);
+    background-size: 50%;
+    background-position: center;
+    }
+    
+    [class*="col"]{
+    min-height:500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .button {
+        align-self: flex-start;
+    }
+    }
+    
+    .right:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 45vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    left: 0;
+    background-image: url("../img/juan-hernandez-smile.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    }
+    
+    .left:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 60vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    right: 0;
+    background: url("../img/our-vision-bg-pattern.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }   
+    .left {
+        padding-top: 75px;
+        padding-right: 75px;
+        padding-bottom: 75px;
+        @media(max-width:$lg){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        color: $primary;
+    } 
+    .left > * {
+        position: relative;
+    }
+}
+
+.newsletter-signup {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/three-blends.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .row {
+        min-height: 700px;
+        h3, p {
+            text-align: center;
+        }
+        .newsletter-form {
+            background: $secondary;
+            color: $primary;
+            padding: 50px 100px;
+            @media(max-width:$lg){
+                padding: 25px 50px;
+            }
+            @media(max-width:$md){
+                padding: 15px 30px;
+            }
+            border-radius: 25px;
+        }
+    }
+}
+
+.wpcf7 {
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type=submit] {
+        display: flex;
+        align-self: center;
+        font-family: 'Bobby Jones Soft', sans-serif !important;
+        font-size: 20px !important;
+        color: $secondary !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        background: $primary !important;
+        border: none !important;
+        padding: 10px 35px !important;
+        border-radius: 25px !important;
+        &:hover {
+            color: $secondary !important;
+            background: black !important;
+        }
+    }
+    textarea {
+        height: 8em;
+    }
+}
+
+.lower-footer {
+    @media(max-width:$lg){
+        text-align: center;
+    }
+    .logo-holder {
+        img {
+            width: 200px;
+        }
+    }
+    .contact-holder {
+        .link-holder {
+            a {
+                padding-bottom: 8px;
+                display: block;
+            }
+
+        }
+        .fa {
+            font-size: 24px;
+            margin-right: 10px;
+            padding: 8px;
+            background: $secondary;
+            color: $primary;
+            border-radius: 100px;
+            &.fa-facebook {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    }
+    .footer-menu-item {
+        display: block;
+        padding-bottom: 8px;
+    }
+}
+
+.history-upper-top-hero {
+    height: 300px;
+    @media(max-width:$md){
+        height: 175px;
+    }
+    background-image: url("../img/history-upper-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.history-lower-top-hero {
+    height: 200px;
+    background-image: url("../img/history-lower-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+}
+
+.history-story {
+    .story-holder {
+        .image-holder {
+            border-radius: 25px 25px 0px 0px;
+            overflow: hidden;
+            .image-1 {
+                height: 500px;
+                @media(max-width:$md){
+                    height: 300px;
+                }
+                @media(max-width:$lg){
+                    height: 400px;
+                }
+                background-image: url("../img/coffee-plantation-salento.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .image-2 {
+                height: 500px;
+                @media(max-width:$md){
+                    height: 300px;
+                }
+                @media(max-width:$lg){
+                    height: 400px;
+                }
+                background-image: url("../img/juans-small-lab.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .image-3 {
+                height: 500px;
+                @media(max-width:$md){
+                    height: 300px;
+                }
+                @media(max-width:$lg){
+                    height: 400px;
+                }
+                background-image: url("../img/coffee-labs-market-stall.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .image-4 {
+                height: 500px;
+                @media(max-width:$md){
+                    height: 300px;
+                }
+                @media(max-width:$lg){
+                    height: 400px;
+                }
+                background-image: url("../img/exotic-escape-pod-hand.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        .individual-content-holder {
+            color: $primary;
+            background: $secondary;
+            border-radius: 0px 0px 25px 25px;
+            overflow: hidden;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 75px;
+            padding-right: 75px;
+            @media(max-width:$lg){
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+}
+
+.visit-our-shop {
+    .container {
+        position: relative;
+        overflow: visible;
+    }
+    .extra:before{
+    content: '';
+    display: block; /* override bootstrap */
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 100vw;
+    height: 100%;
+    transform:translate(-50%, 0);
+    background-size: 50%;
+    background-position: center;
+    }
+    
+    [class*="col"]{
+    min-height:500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .button {
+        align-self: flex-start;
+    }
+    }
+    
+    .right:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 45vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    left: 0;
+    background-image: url("../img/herbal-infusion-wd.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    }
+    
+    .left:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 60vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    right: 0;
+    background: url("../img/visit-our-shop-bg-pattern.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }   
+    .left {
+        padding-top: 75px;
+        padding-right: 75px;
+        padding-bottom: 75px;
+        @media(max-width:$lg){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        color: $primary;
+    } 
+    .left > * {
+        position: relative;
+    }
+}
+
+.blend-finder-upper-top-hero {
+    height: 300px;
+    @media(max-width:$md){
+        height: 175px;
+    }
+    background-image: url("../img/blend-finder-upper-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.blend-finder-lower-top-hero {
+    height: 200px;
+    background-image: url("../img/blend-finder-lower-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+}
+
+.blend-finder {
+    .blend-finder-holder {
+        .individual-content-holder {
+            color: $primary;
+            background: $secondary;
+            border-radius: 25px;
+            overflow: hidden;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 75px;
+            padding-right: 75px;
+            @media(max-width:$lg){
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;  
+        background: rgba(81, 48, 30, 0.5);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #A94A1F;
+        cursor: pointer;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #A94A1F;
+        cursor: pointer;
+      }
+    .label-holder {
+        display: flex;
+        justify-content: space-between;
+    }
+    .submit-holder {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.blends {
+    .blend-holder {
+        .individual-content-holder {
+            color: $primary;
+            background: $secondary;
+            border-radius: 25px;
+            overflow: hidden;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 75px;
+            padding-right: 75px;
+            @media(max-width:$lg){
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            @media(max-width:$md){
+                text-align: center;
+            }
+        }
+    }
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;  
+        background: rgba(81, 48, 30, 0.5);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #A94A1F;
+        cursor: pointer;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #A94A1F;
+        cursor: pointer;
+      }
+    .label-holder {
+        display: flex;
+        justify-content: space-between;
+    }
+    .read-more-holder {
+        display: flex;
+        justify-content: center;
+    }
+    .blend-image-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .aromatic-elixir {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/aromatic-elixir.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .bold-bourbon {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/bold-bourbon.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .exotic-escape {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/exotic-escape.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .herbal-infusion {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/herbal-infusion.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .morning-boost {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/morning-boost.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .smooth-symphony {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/smooth-symphony.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .spiced-awakening {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/spiced-awakening.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .velvet-dream {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            @media(max-width:$md){
+                height: 400px;
+                margin-bottom: 25px;
+            }
+            background-image: url("../img/blends/velvet-dream.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+}
+
+.go-back {
+    .go-back-holder {
+        display: flex;
+        justify-content: center;
+        .button {
+            color: $primary;
+            background: $secondary;
+            &:hover {
+                background: $secondary-900;
+            }
+            i {
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+.contact-upper-top-hero {
+    height: 300px;
+    @media(max-width:$md){
+        height: 175px;
+    }
+    background-image: url("../img/contact-upper-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-lower-top-hero {
+    height: 200px;
+    background-image: url("../img/history-lower-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+}
+
+.contact-holder {
+    .contact-block-holder {
+        .individual-content-holder {
+            color: $primary;
+            background: $secondary;
+            border-radius: 25px 25px 25px 25px;
+            overflow: hidden;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 75px;
+            padding-right: 75px;
+            @media(max-width:$lg){
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            .fa {
+                font-size: 24px;
+                margin-right: 10px;
+                padding: 8px;
+                background: $primary;
+                color: $secondary;
+                border-radius: 100px;
+                &.fa-facebook {
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+            }
+        }
+    }
+}
+
+.visit-our-shop {
+    .container {
+        position: relative;
+        overflow: visible;
+    }
+    .extra:before{
+    content: '';
+    display: block; /* override bootstrap */
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 100vw;
+    height: 100%;
+    transform:translate(-50%, 0);
+    background-size: 50%;
+    background-position: center;
+    }
+    
+    [class*="col"]{
+    min-height:500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .button {
+        align-self: flex-start;
+    }
+    }
+    
+    .right:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 45vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    left: 0;
+    background-image: url("../img/herbal-infusion-wd.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    }
+    
+    .left:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 60vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    right: 0;
+    background: url("../img/visit-our-shop-bg-pattern.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }   
+    .left {
+        padding-top: 75px;
+        padding-right: 75px;
+        padding-bottom: 75px;
+        @media(max-width:$lg){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        color: $primary;
+    } 
+    .left > * {
+        position: relative;
+    }
+}
+
+
+.shop-upper-top-hero {
+    height: 300px;
+    @media(max-width:$md){
+        height: 175px;
+    }
+    background-image: url("../img/blend-finder-upper-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shop-lower-top-hero {
+    height: 200px;
+    background-image: url("../img/blend-finder-lower-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+}
+
+.our-coffee-blends-shop {
+    .row>* {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .individual-item {
+        display: flex;
+        align-items: stretch;
+        color: $primary;
+        padding: 20px;
+        .item-wrapper {
+            background: $secondary;
+            border-radius: 25px;
+            padding-left: 0px;
+            padding-right: 0px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            .image-holder {
+                padding: 0px;
+            }
+        }
+        .item-info-holder {
+            img {
+                height: 100% !important;
+            }
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-grow: 1;
+            padding-left: 50px;
+            padding-right: 100px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            @media(max-width:$lg){
+                padding: 40px;
+            }
+            .button {
+                align-self: flex-start;
+            }
+        }
+        .final-item {
+            background: $primary-100;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $secondary;
+            text-align: center;
+            padding: 100px 20px;
+        }
+    }
+    .button {
+        line-height: 1 !important;
+        font-family: 'Bobby Jones Soft', sans-serif !important;
+        font-size: 20px !important;
+        color: $secondary !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        background: $primary !important;
+        
+        padding: 10px 35px !important;
+        border-radius: 25px !important;
+        &:hover {
+            color: $secondary !important;
+            background: black !important;
+        }
+    }
+}
+
+.read-our-story {
+    .container {
+        position: relative;
+        overflow: visible;
+    }
+    .extra:before{
+    content: '';
+    display: block; /* override bootstrap */
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 100vw;
+    height: 100%;
+    transform:translate(-50%, 0);
+    background-size: 50%;
+    background-position: center;
+    }
+    
+    [class*="col"]{
+    min-height:500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .button {
+        align-self: flex-start;
+    }
+    }
+    
+    .right:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 45vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    left: 0;
+    background-image: url("../img/coffee-explosion.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    }
+    
+    .left:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 60vw;
+    @media(max-width:$lg){
+        margin: 0 calc(-50vw + 50%);
+        width: 100vw;
+    }
+    top: 0;
+    right: 0;
+    background: url("../img/read-our-story-bg-pattern.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }   
+    .left {
+        padding-top: 75px;
+        padding-right: 75px;
+        padding-bottom: 75px;
+        @media(max-width:$lg){
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        color: $primary;
+    } 
+    .left > * {
+        position: relative;
+    }
+    .button {
+        line-height: 1 !important;
+        font-family: 'Bobby Jones Soft', sans-serif !important;
+        font-size: 20px !important;
+        color: $secondary !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        background: $primary !important;
+        
+        padding: 10px 35px !important;
+        border-radius: 25px !important;
+        &:hover {
+            color: $secondary !important;
+            background: black !important;
+        }
+    }
+}
+
+
+.single-product-content {
+    .individual-content-holder {
+        border-radius: 25px;
+        overflow: hidden;
+    }
+    .individual-content-holder-upper {
+        img {
+            width: 100%;
+        }
+
+    }
+    .individual-content-holder-lower {
+        color: $primary;
+        background: $secondary;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 75px;
+        padding-right: 75px;
+        @media(max-width:$lg){
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        @media(max-width:$md){
+            text-align: center;
+        }
+    }
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;  
+        background: rgba(81, 48, 30, 0.5);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%; 
+            background: #A94A1F;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #A94A1F;
+            cursor: pointer;
+        }
+        .label-holder {
+            display: flex;
+            justify-content: space-between;
+            }
+            .submit-holder {
+                display: flex;
+                justify-content: center;
+            }
+    .add-to-basket-holder {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .quantity {
+            input {
+                margin-right: 15px;
+                border-radius: 50px;
+            }
+        }
+        .add-to-cart-container {
+            .button {
+                line-height: 1 !important;
+                font-family: 'Bobby Jones Soft', sans-serif !important;
+                font-size: 20px !important;
+                color: $secondary !important;
+                text-decoration: none !important;
+                display: inline-block !important;
+                background: $primary !important;
+                
+                padding: 10px 35px !important;
+                border-radius: 25px !important;
+                &:hover {
+                    color: $secondary !important;
+                    background: black !important;
+                }
+            }
+        }
+    }
+}
+
+.cart-holder {
+    table {
+        border-color: #00000000 !important;
+        border: none !important;
+    }
+    padding: 25px;
+    border-radius: 25px;
+    background: $secondary;
+    color: $primary;
+    input {
+        margin-right: 15px;
+        border-radius: 50px;
+    }
+    .button {
+        line-height: 1 !important;
+                font-family: 'Bobby Jones Soft', sans-serif !important;
+                font-size: 20px !important;
+                color: $secondary !important;
+                text-decoration: none !important;
+                display: inline-block !important;
+                background: $primary !important;
+                border: none;
+                padding: 10px 35px !important;
+                border-radius: 25px !important;
+                &:hover {
+                    color: $secondary !important;
+                    background: black !important;
+                }
+    }
+    .btn {
+        line-height: 1 !important;
+        font-family: 'Bobby Jones Soft', sans-serif !important;
+        font-size: 20px !important;
+        color: $secondary !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        background: $primary !important;
+        border: none;
+        padding: 10px 35px !important;
+        border-radius: 25px !important;
+        &:hover {
+            color: $secondary !important;
+            background: black !important;
+        }
+    }
+    .cart-collaterals {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .cart_totals {
+            width: 100%;
+        }
+    }
+}
+
+.alert-info, .woocommerce-info {
+    --bs-alert-color: black !important; 
+    --bs-alert-bg: #cff4fc00 !important; 
+    --bs-alert-border-color: #b6effb00 !important; 
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background: #ebe9eb00 !important;
+}
+
+.woocommerce-info::before {
+    color: $primary-100 !important;
+}
+
+.alert-success, .woocommerce-notices-wrapper .woocommerce-message {
+    --bs-alert-color: black;
+    --bs-alert-bg: #d1e7dd00;
+    --bs-alert-border-color: #badbcc00;
+}
+
+.navbar-toggler {
+    border: none !important;
+    .navbar-toggler-icon {
+        color: $secondary !important;
+        width: 1.75em;
+        height: 1.75em;
+    }
+}
